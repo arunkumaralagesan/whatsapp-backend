@@ -54,7 +54,9 @@ app.use(function (req, res, next) {
   next();
 });
 app.get("/", (req,res) => res.status(200).send("hello world"));
-app.listen(port, LOCAL_ADDRESS, () => console.log("perfect"));
+app.listen(port, LOCAL_ADDRESS, () => {
+  console.log("perfect", port);
+});
 
 app.post('/messages/new', (req,res) =>  {
   const dbMessage = req.body;
