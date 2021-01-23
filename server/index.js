@@ -4,7 +4,7 @@ const Pusher = require("pusher");
 const Message = require('../DBMessage');
 
 const app = express();
-const port = process.env.port || 5000;
+const port = process.env.port || 3000;
 
 const pusher = new Pusher({
   appId: "1103692",

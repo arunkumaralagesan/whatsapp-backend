@@ -2,7 +2,7 @@
   "name": "whatsapp-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "node server",
+  "main": "server",
   "scripts": {
     "dev": "nodemon -w server/index.js server/index.js",
     "build": "rm -rf node_modules && npm install --frozen-lockfile",
