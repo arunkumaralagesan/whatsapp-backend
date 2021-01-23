@@ -5,7 +5,7 @@
   "main": "server",
   "scripts": {
     "dev": "nodemon -w server/index.js server/index.js",
-    "build": "rm -rf node_modules && yarn install --frozen-lockfile",
+    "build": "rm -rf node_modules && npm install --frozen-lockfile",
     "start": "NODE_ENV=production node server/index.js"
   },
   "author": "Arun",
