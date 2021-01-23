@@ -45,7 +45,8 @@ app.use(express.json());
 app.use(function (req, res, next) {
   var allowedOrigins = ['http://localhost:3000', 'https://whatsapp-clone-1f80b.web.app/'];
   var origin = req.headers.origin;
-  if(allowedOrigins.indexOf(origin) > -1 || true){
+  if(origin && (allowedOrigins.indexOf(origin) > -1)){
+    console.log(origin, 'origin')
       res.setHeader('Access-Control-Allow-Origin', origin);
   }
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
