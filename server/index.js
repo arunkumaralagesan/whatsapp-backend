@@ -4,7 +4,8 @@ const Pusher = require("pusher");
 const Message = require('../DBMessage');
 
 const app = express();
-const port = process.env.port || 9000;
+const port = process.env.port || 5000;
+
 const pusher = new Pusher({
   appId: "1103692",
   key: "3250be1b1b89a09ad65a",
@@ -44,7 +45,7 @@ app.use(express.json());
 app.use(function (req, res, next) {
   var allowedOrigins = ['http://localhost:3000', 'https://whatsapp-clone-1f80b.web.app/'];
   var origin = req.headers.origin;
-  if(allowedOrigins.indexOf(origin) > -1){
+  if(allowedOrigins.indexOf(origin) > -1 || true){
       res.setHeader('Access-Control-Allow-Origin', origin);
   }
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
