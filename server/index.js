@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Pusher = require("pusher");
-const Message = require('../dbMessages');
+const Message = require('../DBMessage');
 
 const app = express();
 const port = process.env.port || 9000;
