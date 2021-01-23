@@ -42,7 +42,7 @@ db.once('open', () => {
 
 app.use(express.json());
 app.use(function (req, res, next) {
-  var allowedOrigins = ['http://localhost:3000'];
+  var allowedOrigins = ['http://localhost:3000', 'https://whatsapp-clone-1f80b.web.app/'];
   var origin = req.headers.origin;
   if(allowedOrigins.indexOf(origin) > -1){
       res.setHeader('Access-Control-Allow-Origin', origin);
@@ -69,6 +69,7 @@ app.post('/messages/new', (req,res) =>  {
 
 app.get('/messages/sync', (req,res) =>  {
   Message.find((err,data) => {
+    console.log(data)
     if (err) {
       res.status(500).send(err);
     } else {
