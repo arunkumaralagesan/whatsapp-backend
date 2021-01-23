@@ -4,7 +4,7 @@ const Pusher = require("pusher");
 const Message = require('../DBMessage');
 
 const app = express();
-const port = process.env.port || 3000;
+const { port=3000, LOCAL_ADDRESS='0.0.0.0' } = process.env
 
 const pusher = new Pusher({
   appId: "1103692",
@@ -54,7 +54,7 @@ app.use(function (req, res, next) {
   next();
 });
 app.get("/", (req,res) => res.status(200).send("hello world"));
-app.listen(port, () => console.log("perfect"));
+app.listen(port, LOCAL_ADDRESS, () => console.log("perfect"));
 
 app.post('/messages/new', (req,res) =>  {
   const dbMessage = req.body;
