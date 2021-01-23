@@ -54,7 +54,7 @@ app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
-app.get("/", (req,res) => res.status(200).send("hello world"));
+app.get("/", (req,res) => res.status(200).send("WhatsApp backend is live! - just hit it!!!"));
 app.listen(PORT, LOCAL_ADDRESS, () => {
   console.log("perfect", PORT);
 });
